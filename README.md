@@ -1,2 +1,10 @@
 # Casino-in-Python
-Simulation of Casino games in Python
+Simulation of Casino games in Python.
+
+There are plenty of games: Blackjack, Poker, Roulette and Slot Machines.
+
+To make this program even more realistic: a fictious credit card info must be input to play these.
+
+DISCLAIMER: AGAIN, LET ME REPEAT MYSELF, THIS PROGRAM IS A SIMULATION!! THIS MEANS THAT NO REAL CREDIT CARD INFORMATION WILL BE EVER TAKEN!! THIS PROGRAM IS FOR EDUCATIONAL AND SIMULATION PURPOSES ONLY!! I DON'T CONDONE ANY UNAUTHORIZED MAKINGS OF CREDIT CARD INFORMATION READERS THAT HAVE THE MALICIOUS GOAL TO STEAL PRIVATE FINANCIAL INFORMATION AND MANIPULATE ITS DATA!!!!
+
+
