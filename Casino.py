@@ -8,14 +8,14 @@ class Casino:
         self.start_casino()
 
     def load_card_info(self):
-        #Find and read the saved  card info
+        # Find and read the saved  card info
         try:
             with open('card_info.pkl', 'rb') as file:
                 return pickle.load(file)
-        except FileNotFoundError:   #Sequence cannot continue without a saved card info or valid (validate_card_number) saved card info
+        except FileNotFoundError:   # Sequence cannot continue without a saved card info or valid (validate_card_number) saved card info
             return None
 
-    def save_card_info(self, card_number):    #This one will save a valid card info (provided by validate_card_number function) in binary format into its pickle file
+    def save_card_info(self, card_number):    # This one will save a valid card info (provided by validate_card_number function) in binary format into its pickle file
        
         with open('card_info.pkl', 'wb') as file:
             pickle.dump(card_number, file)
@@ -46,28 +46,28 @@ class Casino:
     def get_credit_card_info(self):
         
         if self.card_info:
-            print(f"Welcome back! Your stored card number ends with {self.card_info[-4:]}.")  #Shows you visibility of your last 4 numbers on your credit card
+            print(f"Welcome back! Your stored card number ends with {self.card_info[-4:]}.")  # Shows you visibility of your last 4 numbers on your credit card
             choice = input("Would you like to use the stored card? (yes/no): ").strip().lower()
             if choice == 'yes':
-                return   #This will read your  stored card info and let you play in the casino
+                return   # This will read your  stored card info and let you play in the casino
         
-        #If you selected no,this will now prompt you to enter your desired credit card info,in format described. 
+        # If you selected no,this will now prompt you to enter your desired credit card info,in format described. 
         while True:
             card_number = input("Please enter your credit card number (format: XXXX-XXXX-XXXX-XXXX): ")
             if self.validate_card_number(card_number):
-                self.card_info = card_number   #Validation check: If passed,it will prompt you to this next question.
+                self.card_info = card_number   # Validation check: If passed,it will prompt you to this next question.
                 save_choice = input("Would you like to save your card info for next time? (yes/no): ").strip().lower()
                 if save_choice == 'yes':
-                    self.save_card_info(card_number)   #Saves your card info
+                    self.save_card_info(card_number)   # Saves your card info
                 break
             else:
                 print("Invalid card number format. Please try again.")
 
     @staticmethod
     def validate_card_number(card_number): 
-        #Must follow credit card info pattern
+        # Must follow credit card info pattern
         pattern = r'^\d{4}-\d{4}-\d{4}-\d{4}$'
-        return bool(re.match(pattern, card_number)) #This will simplify it whether its true or false,and if its true, will validate your card number
+        return bool(re.match(pattern, card_number)) # This will simplify it whether its true or false,and if its true, will validate your card number
 
     def play_again(self):
         while True:
